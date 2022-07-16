@@ -1,0 +1,22 @@
+server:
+    error:
+        include-message: always
+        include-binding-errors: always
+spring:
+    datasource:
+        password: Adamix123
+        url: jdbc:mysql://localhost:3306/langspeed?sessionVariables=sql_mode='NO_ENGINE_SUBSTITUTION'&jdbcCompliantTruncation=false
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+                format_sql: true
+        show-sql: true
+        defer-datasource-initialization: true
+    sql:
+        init:
+            mode: never
+
