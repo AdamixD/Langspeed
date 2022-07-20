@@ -1,23 +1,17 @@
 @import '../../style/variable';
 
 .login{
-    display: block;
-    position: absolute;
-    width: 500px;
-    margin-top: 50px;
-    background: $mediumSlateBlue;
-    // background-image: url("../../images/backgrounds/logIn_bg.svg");
-    background-repeat: no-repeat;
-    background-size:cover;
+    width: 25vw;
+    min-width: 320px;
+    max-width: 580px;
+    height: 33vw;
+    min-height: 420px;
+    max-height: 720px;
+    position: relative;
+    background: $dark-blue;
     border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    backface-visibility: hidden;
-    overflow: hidden;
-    backface-visibility: hidden;
-    min-height: 550px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
     padding: 35px 50px;
-    left: 50%;
-    transform: translate(-50%, 10%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,24 +22,6 @@
         color: $white-color;
         text-align: center;
         transition: all 200ms linear;
-    }
-    &__registrationBtn{
-        position: absolute;
-        margin: 0 20px;
-        background-color: $white-color;
-        padding: 10px 30px;
-        border-radius: 8px;
-        color: $onyx;
-        font-weight: 600;
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-        transition: all 200ms linear;
-        text-decoration: none;
-        &:hover{
-            cursor: pointer;
-            color:  $aliceBlue;
-            background-color: $onyx;
-            text-decoration: none;
-        }
     }
     &__form{
         margin-top: 20px;
@@ -60,7 +36,7 @@
             justify-content: space-between;
             margin-top: 10px;
             background-color: $onyx;
-            padding-left: 30px;
+            padding-left: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
             transition: all 200ms linear;
@@ -69,49 +45,46 @@
         &-icon{
             width: 24px;
             height: 24px;
-            fill: $aliceBlue;
+            fill: $medium-blue;
             margin-right: 30px;
             transition: all 200ms linear;
         }
         &-input{
-            padding: 13px 20px;
+            min-width: 180px;
+            padding: 4px 10px;
             font-weight: 500;
             height: 50px;
             border-radius: 8px;
             font-size: 14px;
             outline: none;
-            color: $aliceBlue;
+            color: $white-gray;
             background-color: $onyx;
             border: none;
             transition: all 200ms linear;
             transition: all 200ms linear;
-            &::-webkit-file-upload-button{
-                visibility: hidden;
-                display: none;
-            }
-            &[type='file']{
-                width: 220px;
-
-            }
         }
         &-submit{
-            margin-top: 20px;
+            min-width: 120px;
+            margin: 20px 20px;
             background-color: $white-color;
             padding: 10px 30px;
             border-radius: 8px;
-            color: $onyx;
+            color: $dark-blue;
             font-weight: 600;
-            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
             transition: all 200ms linear;
+            text-decoration: none;
             &:hover{
                 cursor: pointer;
-                color:  $aliceBlue;
+                color:  $white-gray;
                 background-color: $onyx;
+                text-decoration: none;
             }
         }
         &-reset{
             margin-top: 20px;
             color: white;
+            text-decoration: none;
             transition: all 200ms linear;
             &:hover{
                 cursor: pointer;
@@ -127,4 +100,50 @@
 
 .btn-active{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+
+@media (max-width: 875px){
+    .login{
+        min-width: 240px;
+        min-height: 340px;
+        width: 260px;
+        max-height: 60vh;
+        &__form{
+            &-icon{
+                width: 20px;
+                height: 20px;
+                margin-right: 24px;
+            }
+            &-input{
+                width: 180px;
+                height: 36px;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .login{
+        padding: 30px 15px;
+        min-width: 220px;
+        min-height: 320px;
+        max-width: 90vw;
+        max-height: 65vh;
+        &__form{
+            &-item{
+                padding-left: 10px;
+                width: 250px;
+            }
+            &-icon{
+                width: 18px;
+                height: 18px;
+                padding-right: 10px;
+            }
+            &-input{
+                width: 150px;
+                height: 30px;
+            }
+        }
+    }
 }

@@ -1,7 +1,9 @@
 import {lazy, Suspense, useEffect, useState} from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import StartPage from '../../pages/startPage/StartPage';
+import LoginPage from '../../pages/loginPage/LoginPage';
+import RegistrationPage from '../../pages/registrationPage/RegistrationPage';
 import AuthService from '../../services/authService';
-import Login from '../login/Login';
 import Spinner from '../spinner/Spinner';
 import './App.css';
 
@@ -23,8 +25,14 @@ const App = () => {
       <div className="App">
         <Suspense fallback={<Spinner/>}>
           <Switch>
+            <Route exact path="/">
+              <StartPage/>
+            </Route>
+            <Route exact path="/registration">
+              <RegistrationPage/>
+            </Route>
             <Route exact path="/login">
-              <Login/>
+              <LoginPage/>
             </Route>
           </Switch>
         </Suspense>
