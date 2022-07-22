@@ -32,13 +32,13 @@ const register = (firstName, lastName, email, password) => {
     }).catch(e => console.log(e));
 };
 
-const resetPassword = async (password, id) => {
+const resetPassword = async (password, email) => {
     return axios({
         method: 'post',
         url: API_URL + "/reset_password",
         params: {
             password: password,
-            id: id
+            email: email
         },
     }).catch(e => console.log(e));
 };

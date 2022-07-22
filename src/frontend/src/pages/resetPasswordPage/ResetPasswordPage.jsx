@@ -1,10 +1,10 @@
-import Login from "../../components/login/Login"
-import './LoginPage.scss'
+import ResetPassword from '../../components/resetPassword/ResetPassword';
+import '../loginPage/LoginPage.scss'
 import React, { useState } from 'react';
 import { NavLink} from 'react-router-dom';
 import '../../pages/startPage/StartPage.scss'
 
-const LoginPage = () => {
+const ResetPasswordPage = () => {
     const content = <View/>;
 
     return (
@@ -29,7 +29,7 @@ const View = () => {
                 </div>
                 <div className="startPage__wrapper-item">
                     <div className="startPage__login">
-                        <Login></Login>
+                        <ResetPassword></ResetPassword>
                     </div>
                 </div>
             </div>
@@ -37,4 +37,4 @@ const View = () => {
     )
 }
 
-export default LoginPage;
+export default ResetPasswordPage;

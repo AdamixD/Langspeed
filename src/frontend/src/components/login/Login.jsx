@@ -11,7 +11,7 @@ const Login = (props) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [errorMsg, setErrorMsg] = useState("");
-    
+
     const checkBtn = useRef();
 
     let history = useHistory();
@@ -19,7 +19,7 @@ const Login = (props) => {
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     }
-    
+
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     }
@@ -58,9 +58,9 @@ const Login = (props) => {
 
     const spinner = loading ? <Spinner/> : null;
     const errorMessage = error ? <ErrorAuth msg={errorMsg}/> : null;
-    const content = !(loading) ? <View 
-                                            email={email} 
-                                            handleEmailChange={handleEmailChange} 
+    const content = !(loading) ? <View
+                                            email={email}
+                                            handleEmailChange={handleEmailChange}
                                             password={password}
                                             handlePasswordChange={handlePasswordChange}
                                             checkBtn={checkBtn}
@@ -95,7 +95,7 @@ const View = ({email, handleEmailChange, password, handlePasswordChange, checkBt
                         <input type="password" name="password" value={password} className="login__form-input" placeholder="Your Password" onChange={handlePasswordChange}/>
                     </div>
                     <div className="login__form-submit" ref={checkBtn} onClick={handleSubmitClick}>Submit</div>
-                    <a href="http://localhost:3000/resetPassword" className="login__form-reset">Forgot your password?</a>
+                    <a href="http://localhost:3000/reset_password" className="login__form-reset">Forgot your password?</a>
                 </div>
             </div>
         </>

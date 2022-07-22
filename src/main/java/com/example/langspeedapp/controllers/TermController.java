@@ -20,7 +20,6 @@ public class TermController {
 
     @GetMapping("/get")
     public ResponseEntity<?> getTerm(@RequestParam("termId") Long termId) {
-        System.out.println("1111");
         try{
             return ResponseEntity.ok().body(termService.getTerm(termId));
         } catch (TermNotFoundException e) {

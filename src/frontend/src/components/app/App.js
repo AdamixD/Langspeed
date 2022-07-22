@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import StartPage from '../../pages/startPage/StartPage';
 import LoginPage from '../../pages/loginPage/LoginPage';
 import RegistrationPage from '../../pages/registrationPage/RegistrationPage';
+import ResetPasswordPage from '../../pages/resetPasswordPage/ResetPasswordPage';
 import AuthService from '../../services/authService';
 import Spinner from '../spinner/Spinner';
 import './App.css';
@@ -33,6 +34,9 @@ const App = () => {
             </Route>
             <Route exact path="/login">
               <LoginPage/>
+            </Route>
+            <Route exact path="/reset_password">
+              <ResetPasswordPage/>
             </Route>
           </Switch>
         </Suspense>
