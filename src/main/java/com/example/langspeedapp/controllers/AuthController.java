@@ -68,9 +68,9 @@ public class AuthController {
     }
 
     @PostMapping("/reset_password")
-    public ResponseEntity<?> resetPassword(@RequestParam("password") String password, @RequestParam("userId") Long userId) {
+    public ResponseEntity<?> resetPassword(@RequestParam("password") String password, @RequestParam("email") String email) {
         try {
-            authService.resetApplicationUserPassword(password, userId);
+            authService.resetApplicationUserPassword(password, email);
             return ResponseEntity.ok("Password has been changed");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());

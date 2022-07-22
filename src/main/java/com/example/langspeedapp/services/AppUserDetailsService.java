@@ -115,8 +115,8 @@ public class AppUserDetailsService implements UserDetailsService {
         appUserRepository.save(appUser);
     }
 
-    public void resetPassword(String password, Long id) throws UserNotFoundException {
-        AppUser applicationUser = getAppUser(id);
+    public void resetPassword(String password, String email) throws UserNotFoundException {
+        AppUser applicationUser = getUserByEmail(email);
         applicationUser.setPassword(encoder.bCryptPasswordEncoder().encode(password));
         appUserRepository.save(applicationUser);
     }

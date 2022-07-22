@@ -26,7 +26,7 @@ public class AuthService {
         );
     }
 
-    public void resetApplicationUserPassword(String password, Long id) throws UserNotFoundException {
-        appUserDetailsService.resetPassword(password, id);
+    public void resetApplicationUserPassword(String password, String email) throws UserNotFoundException {
+        appUserDetailsService.resetPassword(password, email);
     }
 }
