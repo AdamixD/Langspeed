@@ -3,6 +3,7 @@ import './StartPage.scss'
 import { NavLink} from 'react-router-dom';
 import startImage from "../../images/startImage.jpg";
 import Spinner from '../../components/spinner/Spinner';
+import ToggleThemeButton from '../../components/toggleThemeButton/ToggleThemeButton';
 
 const StartPage = () => {
     const [loadingImage, setLoadingImage] = useState(false);
@@ -27,13 +28,16 @@ const View = ({startImage, handleImageLoading}) => {
         <div className="startPage">
             <div className="startPage__wrapper">
                 <div className="startPage__wrapper-item">
-                    <NavLink exact to="/" className='startPage__logo'>
-                        <div className='startPage__logo-field'>
-                            <p className='startPage__logo-title'>
-                                Langspeed
-                            </p>
-                        </div>
-                    </NavLink>
+                    <div className="startPage__navbar">
+                        <NavLink exact to="/" className='startPage__logo'>
+                            <div className='startPage__logo-field'>
+                                <p className='startPage__logo-title'>
+                                    Langspeed
+                                </p>
+                            </div>
+                        </NavLink>
+                        <ToggleThemeButton></ToggleThemeButton>
+                    </div>
                 </div>
                 <div className="startPage__wrapper-item">
                     <div className='startPage__content'>

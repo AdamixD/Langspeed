@@ -4,10 +4,11 @@
     width: 100%;
     margin: 0px;
     overflow: hidden;
-    background-image: url("../../images/startBackground.png");
+    background-image: url("../../images/bg_light2.png");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
+    transition: all 500ms linear;
     &__wrapper{
         width: 100%;
         height: 100%;
@@ -15,6 +16,11 @@
             width: 100%;
             padding: 50px 0px;
         }
+    }
+    &__navbar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
     &__logo{
         margin: 10px 30px;
@@ -73,6 +79,7 @@
             border-radius: 30px;
             background-color: $dark-blue;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transition: all 500ms linear;
         }
         &-image{
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -88,16 +95,17 @@
         align-items:center;
         justify-content: space-between;
         &-item{
-            min-width: 120px;
+            width: 140px;
             margin: 0 20px;
             background-color: $white-color;
-            padding: 10px 30px;
+            padding: 10px 10px;
             border-radius: 8px;
             color: $dark-blue;
             font-weight: 600;
             box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
             transition: all 200ms linear;
             text-decoration: none;
+            transition: all 500ms linear;
             &:hover{
                 cursor: pointer;
                 color:  $white-gray;
@@ -112,6 +120,27 @@
         margin: 20px;
         justify-content: center;
         align-items: center;
+    }
+}
+
+#dark {
+    .startPage{
+        background-image: url("../../images/bg_dark.png");
+        &__content{
+            &-desc{
+                background-color: $black-gray;
+            }
+        }
+        &__buttons{
+            &-item{
+                background-color: $black-gray;
+                color: $white-color;
+                &:hover{
+                    color: $black-gray;
+                    background-color: $nickel;
+                }
+            }
+        }
     }
 }
 
@@ -139,7 +168,6 @@
         }
         &__buttons{
             &-item{
-                min-width: 80px;
                 border-radius: 8px;
             }
         }
@@ -218,15 +246,10 @@
         }
         &__buttons{
             &-item{
-                min-width: none;
-                width: 70px;
-                margin: 5px;
+                width: 90px;
+                margin: 20px;
                 border-radius: 8px;
             }
         }
     }
 }
-
-
-
-

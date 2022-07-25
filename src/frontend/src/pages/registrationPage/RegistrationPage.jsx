@@ -3,6 +3,7 @@ import '../loginPage/LoginPage.scss'
 import React, { useState } from 'react';
 import { NavLink} from 'react-router-dom';
 import '../../pages/startPage/StartPage.scss'
+import ToggleThemeButton from '../../components/toggleThemeButton/ToggleThemeButton';
 
 const RegistrationPage = () => {
     const content = <View/>;
@@ -19,13 +20,16 @@ const View = () => {
         <div className="startPage">
             <div className="startPage__wrapper">
                 <div className="startPage__wrapper-item">
-                    <NavLink exact to="/" className='startPage__logo'>
-                        <div className='startPage__logo-field'>
-                            <p className='startPage__logo-title'>
-                                Langspeed
-                            </p>
-                        </div>
-                    </NavLink>
+                    <div className="startPage__navbar">
+                        <NavLink exact to="/" className='startPage__logo'>
+                            <div className='startPage__logo-field'>
+                                <p className='startPage__logo-title'>
+                                    Langspeed
+                                </p>
+                            </div>
+                        </NavLink>
+                        <ToggleThemeButton></ToggleThemeButton>
+                    </div>
                 </div>
                 <div className="startPage__wrapper-item">
                     <div className="startPage__login">

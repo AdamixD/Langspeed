@@ -1,5 +1,100 @@
-.spinner{
+@import '../../style/variable';
+
+$size: 10rem;
+$thickness: 2rem;
+
+// Calculated variables.
+$lat: ($size - $thickness) / 2;
+$offset: $lat - $thickness;
+
+.loader {
+    position: relative;
+    width: $size;
+    height: $size;
+    transform: rotate(165deg);
+
+    &:before,
+    &:after {
+    content: '';
     position: absolute;
-    transform: translate(-50%, 30%);
+    top: 50%;
     left: 50%;
+    display: block;
+    width: $thickness;
+    height: $thickness;
+    border-radius: $thickness / 2;
+    transform: translate(-50%, -50%);
+    }
+
+    &:before {
+    animation: before 2s infinite;
+    }
+
+    &:after {
+    animation: after 2s infinite;
+    }
+}
+
+@keyframes before {
+    0% {
+    width: $thickness;
+    box-shadow:
+        $lat (-$offset) $white-color,
+        (-$lat) $offset $white-color;
+    }
+    35% {
+    width: $size;
+    box-shadow:
+        0 (-$offset) $white-color,
+        0   $offset  $white-color;
+    }
+    70% {
+    width: $thickness;
+    box-shadow:
+        (-$lat) (-$offset) $white-color,
+        $lat $offset $white-color;
+    }
+    100% {
+    box-shadow:
+        $lat (-$offset) $white-color,
+        (-$lat) $offset $white-color;
+    }
+}
+
+@keyframes after {
+    0% {
+    height: $thickness;
+    box-shadow:
+        $offset $lat $nickel,
+        (-$offset) (-$lat) $nickel;
+    }
+    35% {
+    height: $size;
+    box-shadow:
+        $offset  0 $nickel,
+        (-$offset) 0 $nickel;
+    }
+    70% {
+    height: $thickness;
+    box-shadow:
+        $offset (-$lat) $nickel,
+        (-$offset) $lat $nickel;
+    }
+    100% {
+    box-shadow:
+        $offset $lat $nickel,
+        (-$offset) (-$lat) $nickel;
+    }
+}
+
+
+html,
+body {
+height: 100%;
+}
+
+.loader {
+position: absolute;
+top: calc(50% - #{$size / 2});
+left: calc(50% - #{$size / 2});
 }
