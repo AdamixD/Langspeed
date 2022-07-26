@@ -1,0 +1,67 @@
+@import '../../style/variable';
+
+.logo{
+    margin: 2px 30px;
+    border-radius: 14px;
+    background-color: $dark-blue;
+    height: 60px;
+    width: 320px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    // box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: all 400ms linear;
+    &__field{
+        border-radius: 14px;
+        background-color: $white-color;
+        height: 50px;
+        width: 280px;
+        margin: 0px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 200ms linear;
+        &:hover{
+            cursor: pointer;
+            background-color: $white-gray;
+        }
+    }
+    &__title{
+        color: $dark-blue;
+        font-size: 36px;
+        font-weight: 800;
+        margin: 0px;
+        transition: all 400ms linear;
+    }
+}
+
+#dark {
+    .logo{
+        background-color: $black-gray;
+        &__field{
+            background-color: $white-color;
+        }
+        &__title{
+            color: $black-gray;
+        }
+    }
+}
+
+@media (max-width: 400px){
+    .logo{
+        border-radius: 14px;
+        height: 49px;
+        width: 224px;
+        &__field{
+            border-radius: 9.8px;
+            height: 38.5px;
+            width: 196px;
+            margin: 0px 14px;
+        }
+        &__title{
+            font-size: 28px;
+        }
+    }
+}
+

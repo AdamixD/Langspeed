@@ -16,7 +16,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transition: all 400ms linear;
+    transition: all 200ms linear;
     &__title{
         font-weight: 700;
         font-size: 25px;
@@ -109,6 +109,9 @@
     .login{
         background: $black-gray;
         &__form{
+            &-icon{
+                fill: $black-gray;
+            }
             &-submit{
                 background-color: $onyx;
                 color: $white-color;

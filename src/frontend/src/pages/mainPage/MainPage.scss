@@ -1,0 +1,20 @@
+@import '../../style/variable';
+
+.mainPage{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: $white-color;
+    transition: all 400ms linear;
+    &__wrapper{
+        width: 100%;
+        padding: 50px;
+    }
+}
+
+#dark{
+    .mainPage{
+        background: $black-gray;
+    }
+}
+

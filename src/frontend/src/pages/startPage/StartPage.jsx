@@ -4,6 +4,7 @@ import { NavLink} from 'react-router-dom';
 import startImage from "../../images/startImage.jpg";
 import Spinner from '../../components/spinner/Spinner';
 import ToggleThemeButton from '../../components/toggleThemeButton/ToggleThemeButton';
+import Logo from '../../components/logo/Logo';
 
 const StartPage = () => {
     const [loadingImage, setLoadingImage] = useState(false);
@@ -29,13 +30,7 @@ const View = ({startImage, handleImageLoading}) => {
             <div className="startPage__wrapper">
                 <div className="startPage__wrapper-item">
                     <div className="startPage__navbar">
-                        <NavLink exact to="/" className='startPage__logo'>
-                            <div className='startPage__logo-field'>
-                                <p className='startPage__logo-title'>
-                                    Langspeed
-                                </p>
-                            </div>
-                        </NavLink>
+                        <Logo></Logo>
                         <ToggleThemeButton></ToggleThemeButton>
                     </div>
                 </div>
